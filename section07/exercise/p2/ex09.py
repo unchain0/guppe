@@ -1,13 +1,13 @@
 def matriz(mat: list):
     s = 0
-    for i in range(len(mat)):
+    for i, item in enumerate(mat):
         for j in range(len(mat)):
-            mat[i][j] = int(input(f'Digite um valor para a posição [{i + 1}, {j + 1}]: '))
+            item[j] = int(input(f'Digite um valor para a posição [{i + 1}, {j + 1}]: '))
             if i == j == 1:
-                s += mat[i][j - 1]
+                s += item[j - 1]
             elif i == j == 2:
-                s += mat[i][j - 1]
-                s += mat[i][j - 2]
+                s += item[j - 1]
+                s += item[j - 2]
     print('-=' * 30)
     for linha in mat:
         for elemento in linha:

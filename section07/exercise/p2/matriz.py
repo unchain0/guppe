@@ -1,7 +1,7 @@
 def matriz(mat: list):
-    for i in range(len(mat)):
+    for i, item in enumerate(mat):
         for j in range(len(mat)):
-            mat[i][j] = int(input(f'Digite um valor para a posição [{i + 1}, {j + 1}]: '))
+            item[j] = int(input(f'Digite um valor para a posição [{i + 1}, {j + 1}]: '))
     print('-=' * 30)
     for linha in mat:
         for elemento in linha:

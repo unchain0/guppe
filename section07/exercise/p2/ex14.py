@@ -1,13 +1,13 @@
 def cartela(mat: list):
     from random import randint
     c = []
-    for i in range(len(mat)):
+    for i, item in enumerate(mat):
         for j in range(len(mat)):
             while True:
                 r = randint(0, 99)
                 if r not in c:
                     c.append(r)
-                    mat[i][j] = r
+                    item[j] = r
                     break
     print('-=' * 30)
     for linha in mat:

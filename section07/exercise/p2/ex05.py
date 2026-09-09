@@ -1,9 +1,9 @@
 def matriz(mat: list):
     pos = False
-    for i in range(len(mat)):
+    for i, item in enumerate(mat):
         for j in range(len(mat)):
             v = int(input(f'Digite um valor para a posição [{i + 1}, {j + 1}]: '))
-            mat[i][j] = v
+            item[j] = v
             if v == x:
                 pos = f'[{i + 1}, {j + 1}]'
     print('-=' * 30)

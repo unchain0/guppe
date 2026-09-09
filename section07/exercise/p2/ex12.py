@@ -1,9 +1,9 @@
 def matriz(mat: list):
     t = [[], [], []]
-    for i in range(len(mat)):
+    for i, item in enumerate(mat):
         for j in range(len(mat)):
             v = int(input(f'Digite um valor para a posição [{i + 1}, {j + 1}]: '))
-            mat[i][j] = v
+            item[j] = v
             if j == 0:
                 t[0].append(v)
             if j == 1:

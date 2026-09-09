@@ -6,5 +6,5 @@ for elemento in num:
         impar.append(elemento)
 
 print()
-for i in range(len(impar)):
-    print(num[i], impar[i])
+for i, item in enumerate(impar):
+    print(num[i], item)

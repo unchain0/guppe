@@ -1,10 +1,10 @@
 def matriz(mat: list):
     from random import randint
     t = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-    for i in range(len(mat)):
+    for i, item in enumerate(mat):
         for j in range(len(mat)):
-            mat[i][j] = randint(1, 20)
-            t[i][j] = mat[i][j]
+            item[j] = randint(1, 20)
+            t[i][j] = item[j]
             if i == j == 1:
                 t[i - 1][j] = 0
                 t[i - 1][j + 1] = 0
