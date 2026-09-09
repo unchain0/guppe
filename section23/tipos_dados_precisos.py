@@ -1,4 +1,3 @@
-
 """
 int, str, float, List, Set, Dict, etc
 
@@ -10,7 +9,6 @@ def dobro(valor: int, /) -> int:
 print(dobro(8))
 print(dobro(42))
 """
-
 """
 - Literal Type
 - Union
@@ -118,6 +116,10 @@ print(outro)
 """
 
 # Protocols
+
+
+
+
 from typing import Protocol
 
 
@@ -129,12 +131,12 @@ class Curso(Protocol):
 
 
 def estudar(valor: Curso) -> None:
-    print(f'Estou estudando o curso: {valor.titulo}')
+    print(f"Estou estudando o curso: {valor.titulo}")
 
 
 class Venda:
-    titulo: str = 'Programação em Python: Essencial'
+    titulo: str = "Programação em Python: Essencial"
 
 
 estudar(v1 := Venda())
-estudar(c1 := Curso('Cientista de Dados com Python'))
+estudar(c1 := Curso("Cientista de Dados com Python"))

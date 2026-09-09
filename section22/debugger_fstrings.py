@@ -11,12 +11,12 @@ print(f'O resultado é {multiplicar(9, 4)}')
 print(f'{(media := 8 / 2)} é a metade de {media * 2}')
 """
 
-geek: str = 'Geek University'
+geek: str = "Geek University"
 print(f"geek='{geek}'")
-print(f'{geek=}')
+print(f"{geek=}")
 
-print(f'{geek.upper()[::-1] = }')
+print(f"{geek.upper()[::-1] = }")
 
-print(f'{(soma := sum(range(1, 100))) = }')
+print(f"{(soma := sum(range(1, 100))) = }")
 
-print(f'{(media := soma / 100) = }')
+print(f"{(media := soma / 100) = }")

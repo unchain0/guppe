@@ -56,7 +56,7 @@ print(statistics.geometric_mean(valores_inteiros))
 import statistics
 
 # statistics.multimode - retorna o valor mais frequente de um container (moda)
-seq1 = 'Geek University'
+seq1 = "Geek University"
 seq2 = [1, 2, 3, 4, 5, 6, 7]
 seq3 = [1, 2, 2, 2, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]
 

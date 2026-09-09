@@ -1,11 +1,11 @@
 import random
-from typing import List, Tuple, Dict, Final
+from typing import Dict, Final, List, Tuple
 
 # https://www.alt-codes.net/suit-cards.php
 
 # Constantes para representar os naipes e as cartas
-NAIPES: List[str] = '♠ ♥ ♦ ♣'.split()
-CARTAS: List[str] = '2 3 4 5 6 7 8 9 10 J Q K A'.split()
+NAIPES: List[str] = "♠ ♥ ♦ ♣".split()
+CARTAS: List[str] = "2 3 4 5 6 7 8 9 10 J Q K A".split()
 
 # Tipo Alias para representar uma carta como par (nipe, valor)
 CARTA: Final = Tuple[str, str]
@@ -44,15 +44,17 @@ def jogar() -> Dict[str, BARALHO]:
     # Cria o baralho de cartas embaralhadas
     cartas: BARALHO = criar_baralho(aleatorio=True)
     # Define o nome dos jogadores
-    jogadores: List[str] = 'P1 P2 P3 P4'.split()
+    jogadores: List[str] = "P1 P2 P3 P4".split()
     # Distribui as cartas entre os jogadores
-    maos: Dict[str, BARALHO] = {j: b for j, b in zip(jogadores, distribuir_cartas(cartas))}
+    maos: Dict[str, BARALHO] = {
+        j: b for j, b in zip(jogadores, distribuir_cartas(cartas))
+    }
     # Imprime as cartas de cada jogador
     for jogador, cartas in maos.items():
-        cartas_jogador: str = ' '.join('{}{}'.format(*c) for c in cartas)
-        print(f'{jogador}: {cartas_jogador}')
+        cartas_jogador: str = " ".join("{}{}".format(*c) for c in cartas)
+        print(f"{jogador}: {cartas_jogador}")
     return maos
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     jogar()

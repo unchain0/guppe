@@ -11,5 +11,5 @@ print(list(metadados_pip))
 print(metadados_pip['Project-URL'])
 """
 
-print(len(metadata.files('pip')))  # Quantidade de arquivos
-print(metadata.requires('pip'))  # Dependências
+print(len(metadata.files("pip")))  # Quantidade de arquivos
+print(metadata.requires("pip"))  # Dependências

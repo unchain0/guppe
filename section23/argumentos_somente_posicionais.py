@@ -50,11 +50,11 @@ print(cumprimento_v5(nome='Geek'))
 """
 
 
-def cumprimento_v6(nome: str, /, mensagem: str = 'Olá', *, saudacao: str) -> str:
-    return f'{mensagem} {nome} {saudacao}'
+def cumprimento_v6(nome: str, /, mensagem: str = "Olá", *, saudacao: str) -> str:
+    return f"{mensagem} {nome} {saudacao}"
 
 
-print(cumprimento_v6('Geek', mensagem='Hello', saudacao='tenha um bom dia'))
-print(cumprimento_v6('Geek', saudacao='tenha um bom dia'))
+print(cumprimento_v6("Geek", mensagem="Hello", saudacao="tenha um bom dia"))
+print(cumprimento_v6("Geek", saudacao="tenha um bom dia"))
 # print(cumprimento_v6('Geek', 'Oi', 'Vamos?'))
 # TypeError: cumprimento_v6() takes from 1 to 2 positional arguments but 3 were given
