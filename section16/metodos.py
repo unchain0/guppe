@@ -63,13 +63,13 @@ print(user._Usuario__gera_usuario())  # Name Mangling
 
 """
 
+from passlib.hash import pbkdf2_sha256 as crypt
+
 
 class Lampada:
+
     def __init__(self, cor: str, voltagem: int, luminosidade: int):
-        self.__cor = cor
-        self.__voltagem = voltagem
-        self.__luminosidade = luminosidade
-        self.__ligada = False
+        raise NotImplementedError()
 
 
 class ContaCorrente:
@@ -77,8 +77,6 @@ class ContaCorrente:
 
     def __init__(self, limite: float, saldo: float):
         self.__numero = ContaCorrente.contador + 1
-        self.__limite = limite
-        self.__saldo = saldo
         ContaCorrente.contador = self.__numero
 
 
@@ -87,8 +85,6 @@ class Produto:
 
     def __init__(self, nome: str, descricao: str, valor: float):
         self.__id = Produto.contador + 1
-        self.__nome = nome
-        self.__descricao = descricao
         self.__valor = valor
         Produto.contador = self.__id
 
@@ -97,26 +93,23 @@ class Produto:
         return self.__valor * (1 - percentual / 100)
 
 
-from passlib.hash import pbkdf2_sha256 as crypt
-
-
 class Usuario:
     contador = 0
 
     @classmethod
     def conta_usuarios(cls):
-        print(f'Classe: {cls}')
-        print(f'Temos {cls.contador} usuário(s) no sistema.')
+        print(f"Classe: {cls}")
+        print(f"Temos {cls.contador} usuário(s) no sistema.")
 
     @classmethod
     def teste(cls):
-        print('Teste')
+        print("Teste")
 
     @staticmethod
     def definicao():
         """Método estático não recebe nem a classe e nem a instância. É um método utilitário. Pode ser acessado
         diretamente pela classe ou pela instância."""
-        return 'definição'
+        return "definição"
 
     def __init__(self, nome: str, sobrenome: str, email: str, senha: str):
         self.__nome = nome.title().strip()
@@ -124,16 +117,17 @@ class Usuario:
         self.__email = email
         self.__senha = crypt.hash(senha, rounds=200000, salt_size=16)
         Usuario.contador = self.contador + 1
-        print(f'Usuário criado: {self.__gera_usuario()}')
+        print(f"Usuário criado: {self.__gera_usuario()}")
 
     def nome_completo(self) -> str:
-        return '{nome} {sobrenome}'.format(nome=self.__nome, sobrenome=self.__sobrenome)
+        return "{nome} {sobrenome}".format(nome=self.__nome,
+                                           sobrenome=self.__sobrenome)
 
     def checa_senha(self, senha) -> bool:
         return True if crypt.verify(senha, self.__senha) else False
 
     def __gera_usuario(self):
-        return self.__email.split('@')[0]
+        return self.__email.split("@")[0]
 
 
 # Método Estático
@@ -141,6 +135,6 @@ class Usuario:
 print(Usuario.contador)
 print(Usuario.definicao())
 
-user = Usuario('Felicity', 'Jones', 'felicity@gmail.com', '12345678')
+user = Usuario("Felicity", "Jones", "felicity@gmail.com", "12345678")
 print(user.contador)
 print(user.definicao())
