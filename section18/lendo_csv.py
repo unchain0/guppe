@@ -1,4 +1,4 @@
-"""
+r"""
 Lendo arquivos CSV
 
 CSV - Comma-separated values - Valores separados por vírgula
@@ -50,9 +50,12 @@ import csv
 
 # Forma 3 - DictReader (com separador diferente)
 
-with open(r'section18\lutadores.csv', encoding='utf8') as f:
-    dados = csv.DictReader(f, delimiter=',')  # Por padrão o delimiter é a vírgula.
+with open(r"section18\lutadores.csv", encoding="utf8") as f:
+    dados = csv.DictReader(
+        f, delimiter=",")  # Por padrão o delimiter é a vírgula.
     print(dados.fieldnames)  # Retorna os nomes das colunas
     for linha in dados:
         # Cada linha é um OrderedDict
-        print(f"{linha['Nome']} nasceu no(a) {linha['País']} e mede {linha['Altura (em cm)']} cm")
+        print(
+            f"{linha['Nome']} nasceu no(a) {linha['País']} e mede {linha['Altura (em cm)']} cm"
+        )
